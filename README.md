@@ -89,7 +89,7 @@ start index.html
 ## 👨‍💻 Sponsoring Guild Artisan
 **Humam Khan**  
 *Full Stack Web Developer & UX Architect*  
-📧 Email: [humamkhan62@gmail.com](mailto:humamkhan62@gmail.com)  
+📧 Email: [humamrahim8@gmail.com](mailto:humamrahim8@gmail.com)  
 💼 LinkedIn: [humamkhan8](https://www.linkedin.com/in/humamkhan8/)  
 🕸️ Portfolio: [humamkhan.vercel.app](https://humamkhan.vercel.app/)  
 
