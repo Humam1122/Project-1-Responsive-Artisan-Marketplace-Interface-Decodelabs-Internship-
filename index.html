@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terra & Twine | Premium Artisan Marketplace</title>
+    
+    <!-- Google Fonts Preconnect & Pairing: Playfair Display (Serif) + Inter (Sans-Serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for High-Quality Interactive Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Pure Custom CSS3 - Mastering Fundamentals Without Outside Frameworks -->
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- ==========================================================================
+       TOP UTILITY BAR
+       ========================================================================== -->
+    <div class="top-bar">
+        <div class="container">
+            <span>✦</span> 100% Direct-to-Artisan Revenue <span>•</span> Free Carbon-Neutral Shipping on Orders over $150
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+       NAVIGATION CONTAINER
+       ========================================================================== -->
+    <header class="site-header" id="siteHeader">
+        <div class="container">
+            <nav class="nav-container">
+                <!-- Branding -->
+                <a href="#" class="brand-link">
+                    Terra & Twine<span class="brand-dot">•</span>
+                </a>
+
+                <!-- Wayfinding Links -->
+                <ul class="nav-links">
+                    <li><a href="#marketplace" class="nav-link active" data-nav="explore">Explore</a></li>
+                    <li><a href="#stories" class="nav-link" data-nav="artisans">Artisans</a></li>
+                    <li><a href="#about" class="nav-link" data-nav="about">Our Story</a></li>
+                    <li><a href="#apply" class="nav-link" data-nav="apply">Apply to Sell</a></li>
+                </ul>
+
+                <!-- Integrated Search -->
+                <div class="nav-search">
+                    <i class="fa-solid fa-magnifying-glass nav-search-icon"></i>
+                    <input type="text" class="nav-search-input" id="desktopSearch" placeholder="Search ceramics, leather, wood..." aria-label="Search items">
+                </div>
+
+                <!-- Actions -->
+                <div class="nav-actions">
+                    <!-- Favorites Toggle -->
+                    <button class="action-btn" id="navFavBtn" aria-label="View Saved Items">
+                        <i class="fa-regular fa-heart"></i>
+                        <span class="badge" id="favBadge">0</span>
+                    </button>
+
+                    <!-- Cart Trigger -->
+                    <button class="action-btn" id="navCartBtn" aria-label="Open Shopping Bag">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <span class="badge" id="cartBadge">0</span>
+                    </button>
+
+                    <!-- Mobile Menu Hamburger -->
+                    <button class="action-btn menu-toggle" id="menuToggleBtn" aria-label="Open Menu">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Fullscreen Overlay Backdrop -->
+    <div class="overlay-backdrop" id="mainBackdrop"></div>
+
+    <!-- Mobile Drawer -->
+    <aside class="mobile-drawer" id="mobileDrawer">
+        <div class="drawer-header">
+            <a href="#" class="brand-link">
+                Terra & Twine<span class="brand-dot">•</span>
+            </a>
+            <button class="drawer-close" id="drawerCloseBtn" aria-label="Close menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="drawer-content">
+            <div class="drawer-search">
+                <div class="nav-search" style="display: block; max-width: 100%;">
+                    <i class="fa-solid fa-magnifying-glass nav-search-icon"></i>
+                    <input type="text" class="nav-search-input" id="mobileSearch" placeholder="Search marketplace...">
+                </div>
+            </div>
+            <nav class="drawer-links">
+                <a href="#marketplace" class="drawer-link drawer-nav-link">Explore Crafts <i class="fa-solid fa-chevron-right" style="font-size: 0.8rem;"></i></a>
+                <a href="#stories" class="drawer-link drawer-nav-link">Meet the Artisans <i class="fa-solid fa-chevron-right" style="font-size: 0.8rem;"></i></a>
+                <a href="#about" class="drawer-link drawer-nav-link">Our Heritage <i class="fa-solid fa-chevron-right" style="font-size: 0.8rem;"></i></a>
+                <a href="#apply" class="drawer-link drawer-nav-link">Guild Application <i class="fa-solid fa-chevron-right" style="font-size: 0.8rem;"></i></a>
+            </nav>
+        </div>
+        <div class="drawer-footer">
+            <p style="font-size: 0.8rem; color: var(--color-text-muted);">© 2025 Terra & Twine Guild. All Rights Reserved.</p>
+        </div>
+    </aside>
+
+    <!-- ==========================================================================
+       HERO SECTION
+       ========================================================================== -->
+    <section class="hero-section">
+        <!-- Whole Background Video -->
+        <video class="hero-bg-video" autoplay loop muted playsinline>
+            <source src="Assets/hero section vid.mp4" type="video/mp4">
+        </video>
+        <!-- Translucent Veil Overlay -->
+        <div class="hero-overlay"></div>
+
+        <div class="container">
+            <div class="hero-layout">
+                <!-- Hero Content -->
+                <div class="hero-content">
+                    <div class="hero-tagline">
+                        <i class="fa-solid fa-seedling"></i> Local Craftsmanship
+                    </div>
+                    <h1 class="hero-title">Handcrafted Heritage, Designed for Tomorrow.</h1>
+                    <p class="hero-description">
+                        Discover museum-grade ceramics, architectural woodwork, and hand-tooled leather goods created by independent neighborhood masters. Directly supporting local micro-economies.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#marketplace" class="btn btn-primary">
+                            Explore Collection <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#stories" class="btn btn-outline">
+                            Meet the Guild
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       WAYFINDING & CATEGORIES HORIZON
+       ========================================================================== -->
+    <section class="category-horizon">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title font-display">Explore by Craft</h2>
+                <p class="section-subtitle">Categorized masterworks sourced directly from independent local workshops</p>
+            </div>
+
+            <!-- Horizontal Carousel -->
+            <div class="category-grid" id="categoryCarousel">
+                <div class="category-card active" data-category="all">
+                    <div class="category-icon"><i class="fa-solid fa-clover"></i></div>
+                    <span class="category-name">All Crafts</span>
+                </div>
+                <div class="category-card" data-category="ceramics">
+                    <div class="category-icon"><i class="fa-solid fa-cubes"></i></div>
+                    <span class="category-name">Ceramics</span>
+                </div>
+                <div class="category-card" data-category="leather">
+                    <div class="category-icon"><i class="fa-solid fa-briefcase"></i></div>
+                    <span class="category-name">Leather Goods</span>
+                </div>
+                <div class="category-card" data-category="wood">
+                    <div class="category-icon"><i class="fa-solid fa-tree"></i></div>
+                    <span class="category-name">Woodworking</span>
+                </div>
+                <div class="category-card" data-category="textiles">
+                    <div class="category-icon"><i class="fa-solid fa-layer-group"></i></div>
+                    <span class="category-name">Woven Textiles</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       MAIN CONTENT MACRO LAYOUT & SIDEBAR
+       ========================================================================== -->
+    <section class="marketplace-section" id="marketplace">
+        <div class="container">
+            
+            <!-- Controls Overlay -->
+            <div class="marketplace-controls">
+                <div class="controls-left">
+                    <button class="mobile-filter-btn" id="mobileFilterBtn">
+                        <i class="fa-solid fa-sliders"></i> Filter & Refine
+                    </button>
+                    <div class="results-count">
+                        Showing <span id="resultsCount">7</span> independent listings
+                    </div>
+                </div>
+
+                <div class="sort-control">
+                    <span style="color: var(--color-text-muted);">Sort by:</span>
+                    <select class="sort-select" id="sortSelect" aria-label="Sort listings">
+                        <option value="featured">Featured Artisans</option>
+                        <option value="price-asc">Price: Low to High</option>
+                        <option value="price-desc">Price: High to Low</option>
+                        <option value="newest">Newest Additions</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Active Filter Chips -->
+            <div class="active-filters" id="activeFiltersContainer" style="margin-bottom: 1.5rem;">
+                <!-- Dynamically populated -->
+            </div>
+
+            <!-- Macro Grid Architecture -->
+            <div class="macro-layout">
+                
+                <!-- SIDEBAR CONTAINER -->
+                <aside class="sidebar-container" id="filterSidebar">
+                    <div class="sidebar-header">
+                        <span class="sidebar-title">Filter & Refine</span>
+                        <button class="drawer-close" id="sidebarCloseBtn" aria-label="Close filters">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+
+                    <!-- Filter Group: Max Price -->
+                    <div class="filter-group">
+                        <div class="filter-group-title">Maximum Price</div>
+                        <div class="price-display">
+                            <span>$10</span>
+                            <span id="priceSliderVal">$500</span>
+                        </div>
+                        <input type="range" min="10" max="500" value="500" class="range-slider" id="priceSlider" aria-label="Filter by maximum price">
+                    </div>
+
+                    <!-- Filter Group: Availability -->
+                    <div class="filter-group">
+                        <div class="filter-group-title">Availability</div>
+                        <div class="checkbox-list">
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="filter-checkbox" data-filter-type="availability" value="in-stock" checked>
+                                <span class="checkbox-custom"></span>
+                                In Stock & Ready
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="filter-checkbox" data-filter-type="availability" value="custom">
+                                <span class="checkbox-custom"></span>
+                                Custom Commissions
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Filter Group: Sustainability Standards -->
+                    <div class="filter-group">
+                        <div class="filter-group-title">Sustainability</div>
+                        <div class="checkbox-list">
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="filter-checkbox" data-filter-type="sustainability" value="locally-sourced">
+                                <span class="checkbox-custom"></span>
+                                100% Locally Sourced
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="filter-checkbox" data-filter-type="sustainability" value="organic">
+                                <span class="checkbox-custom"></span>
+                                Pure Organic Materials
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="filter-checkbox" data-filter-type="sustainability" value="upcycled">
+                                <span class="checkbox-custom"></span>
+                                Upcycled / Reclaimed
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Filter Group: Artisan Region -->
+                    <div class="filter-group">
+                        <div class="filter-group-title">Artisan Guild Region</div>
+                        <div class="checkbox-list">
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="filter-checkbox" data-filter-type="region" value="north">
+                                <span class="checkbox-custom"></span>
+                                Northside Guilds
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="filter-checkbox" data-filter-type="region" value="east">
+                                <span class="checkbox-custom"></span>
+                                East River Collective
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="filter-checkbox" data-filter-type="region" value="west">
+                                <span class="checkbox-custom"></span>
+                                West End Studios
+                            </label>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary" id="applyMobileFiltersBtn" style="width: 100%; margin-top: 1rem; display: none;">
+                        Apply Filters
+                    </button>
+                </aside>
+
+                <!-- MAIN CONTENT GRID -->
+                <main class="content-grid" id="mainListingGrid">
+                    <!-- Dynamic Product Cards Injected Here via JS -->
+                    
+                    <!-- Empty State -->
+                    <div class="empty-state" id="gridEmptyState">
+                        <i class="fa-solid fa-box-open empty-icon"></i>
+                        <h3 class="empty-title">No matching masterworks found</h3>
+                        <p class="empty-text">Try broadening your search or modifying your active material criteria.</p>
+                        <button class="btn btn-outline" id="resetAllFiltersBtn">Reset All Filters</button>
+                    </div>
+                </main>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       ARTISAN SPOTLIGHT CAROUSEL
+       ========================================================================== -->
+    <section class="artisan-stories" id="stories">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title font-display">Meet the Neighborhood Masters</h2>
+                <p class="section-subtitle">Preserving ancestral technique through uncompromised dedication</p>
+            </div>
+
+            <div class="story-grid">
+                <!-- Story Card 1 -->
+                <div class="story-card">
+                    <p class="story-quote">
+                        "Clay has a cellular memory. Every gesture, turn, and breath leaves an imprint that survives the ultimate kiln fires."
+                    </p>
+                    <div class="story-author">
+                        <img src="https://images.pexels.com/photos/9736246/pexels-photo-9736246.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=150&w=150" alt="Ravi Lages" class="author-avatar">
+                        <div class="author-details">
+                            <div class="author-name">Ravi Lages</div>
+                            <div class="author-studio">Earthen Form Studios</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Story Card 2 -->
+                <div class="story-card">
+                    <p class="story-quote">
+                        "True woodworking isn't about forcing the grain to fit your design; it's about listening to the timber and letting it reveal its primary posture."
+                    </p>
+                    <div class="story-author">
+                        <img src="https://images.pexels.com/photos/5974250/pexels-photo-5974250.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=150&w=150" alt="Ono Kosuki" class="author-avatar">
+                        <div class="author-details">
+                            <div class="author-name">Ono Kosuki</div>
+                            <div class="author-studio">Kosuki Timbercraft</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       FOOTER CONTAINER
+       ========================================================================== -->
+    <footer class="site-footer" id="about">
+        <div class="container">
+            <div class="footer-main">
+                
+                <!-- Col 1: Brand & Charter -->
+                <div class="footer-col">
+                    <a href="#" class="footer-brand">
+                        Terra & Twine<span class="brand-dot">•</span>
+                    </a>
+                    <p class="footer-desc">
+                        A sovereign digital marketplace empowering independent craftspeople. Restoring the human nexus between the maker's hands and the local home.
+                    </p>
+                    <div style="display: flex; gap: 1rem; font-size: 1.25rem; margin-top: 0.5rem;">
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+                        <a href="#" aria-label="Substack"><i class="fa-solid fa-feather"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Wayfinding -->
+                <div class="footer-col">
+                    <div class="footer-title">Wayfinding</div>
+                    <nav class="footer-links">
+                        <a href="#marketplace" class="footer-link">Explore the Catalog</a>
+                        <a href="#stories" class="footer-link">Artisan Registry</a>
+                        <a href="#" class="footer-link">Studio Work-shares</a>
+                        <a href="#" class="footer-link">Carbon Neutral Policy</a>
+                    </nav>
+                </div>
+
+                <!-- Col 3: Guild Actions -->
+                <div class="footer-col" id="apply">
+                    <div class="footer-title">The Guild</div>
+                    <nav class="footer-links">
+                        <a href="#" class="footer-link">Apply for Residency</a>
+                        <a href="#" class="footer-link">Direct-to-Maker Terms</a>
+                        <a href="#" class="footer-link">Wholesale Sourcing</a>
+                        <a href="#" class="footer-link">Community Grants</a>
+                    </nav>
+                </div>
+
+                <!-- Col 4: Dispatch Capture -->
+                <div class="footer-col">
+                    <div class="footer-title">The Curated Dispatch</div>
+                    <p class="footer-desc" style="font-size: 0.85rem;">
+                        Receive bi-monthly limited run drops and intimate video documentaries directly from the workshops.
+                    </p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" class="newsletter-input" placeholder="Enter your email address" required aria-label="Email address">
+                        <button type="submit" class="newsletter-btn">Subscribe to Dispatches</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ==========================================================================
+       SIDE PANELS: SHOPPING CART DRAWER
+       ========================================================================== -->
+    <aside class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <div class="cart-title">
+                <i class="fa-solid fa-bag-shopping" style="color: var(--color-primary);"></i> Artisan Bag
+            </div>
+            <button class="drawer-close" id="cartCloseBtn" aria-label="Close cart">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <!-- Cart Items -->
+        <div class="cart-items" id="cartItemsContainer">
+            <!-- Dynamically Populated -->
+            <div class="cart-empty" id="cartEmptyState">
+                <i class="fa-solid fa-basket-shopping"></i>
+                <p>Your collection is currently empty.</p>
+                <button class="btn btn-primary" id="startExploringBtn" style="font-size: 0.85rem; padding: 0.6rem 1.25rem;">
+                    Explore Masterworks
+                </button>
+            </div>
+        </div>
+
+        <!-- Cart Footer -->
+        <div class="cart-footer" id="cartFooterState" style="display: none;">
+            <div class="promo-code-container">
+                <input type="text" class="promo-input" id="promoInput" placeholder="Promo code (e.g. GUILD20)">
+                <button class="promo-btn" id="applyPromoBtn">Apply</button>
+            </div>
+            
+            <div class="cart-summary-row">
+                <span>Subtotal</span>
+                <span id="cartSubtotal">$0.00</span>
+            </div>
+            <div class="cart-summary-row">
+                <span>Carbon-Neutral Shipping</span>
+                <span id="cartShipping">Free</span>
+            </div>
+            <div class="cart-summary-row" id="discountRow" style="display: none; color: var(--color-primary);">
+                <span>Guild Promotion</span>
+                <span id="cartDiscount">-$0.00</span>
+            </div>
+            <div class="cart-summary-row total">
+                <span>Total</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+
+            <button class="btn btn-primary" id="checkoutBtn" style="width: 100%; max-width: none; margin-top: 0.5rem;">
+                Secure Checkout <i class="fa-solid fa-lock" style="font-size: 0.8rem;"></i>
+            </button>
+        </div>
+    </aside>
+
+
+    <!-- ==========================================================================
+       SIDE PANELS: PRODUCT QUICK-VIEW MODAL
+       ========================================================================== -->
+    <div class="modal-container" id="quickViewModal" role="dialog" aria-modal="true">
+        <div class="modal-backdrop" id="modalBackdrop"></div>
+        
+        <div class="modal-box">
+            <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close dialog">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Visual Gallery -->
+            <div class="modal-gallery">
+                <img src="" alt="" class="modal-main-img" id="modalImg">
+            </div>
+
+            <!-- Comprehensive Data Details -->
+            <div class="modal-details">
+                <div>
+                    <span class="item-category" id="modalCategory">Ceramics</span>
+                    <h3 class="section-title font-display" id="modalTitle" style="font-size: 1.6rem; margin-top: 0.25rem;">Product Title</h3>
+                </div>
+
+                <div class="modal-artisan-band">
+                    <img src="" alt="" class="modal-artisan-avatar" id="modalArtisanImg">
+                    <div>
+                        <div style="font-weight: 700; font-size: 0.9rem; color: var(--color-secondary);" id="modalArtisanName">Artisan Name</div>
+                        <div style="font-size: 0.75rem; color: var(--color-text-muted);" id="modalArtisanRegion">Region</div>
+                    </div>
+                </div>
+
+                <p class="modal-desc" id="modalDesc">
+                    Detailed multi-paragraph description.
+                </p>
+
+                <div class="modal-attributes">
+                    <div class="attr-item">
+                        <span class="attr-label">Materials</span>
+                        <span class="attr-val" id="modalAttrMat">Earthen Clay</span>
+                    </div>
+                    <div class="attr-item">
+                        <span class="attr-label">Sustainability</span>
+                        <span class="attr-val" id="modalAttrSus">100% Locally Sourced</span>
+                    </div>
+                    <div class="attr-item">
+                        <span class="attr-label">Availability</span>
+                        <span class="attr-val" id="modalAttrAvail">In Stock</span>
+                    </div>
+                    <div class="attr-item">
+                        <span class="attr-label">Shipping</span>
+                        <span class="attr-val">Carbon Neutral</span>
+                    </div>
+                </div>
+
+                <div class="modal-price-row">
+                    <div class="modal-price" id="modalPrice">$0</div>
+                    <button class="btn btn-primary" id="modalAddToBagBtn">
+                        Add to Artisan Bag <i class="fa-solid fa-bag-shopping"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ==========================================================================
+       FLOATING SOCIAL & PORTFOLIO CONNECTIVITY WIDGET
+       ========================================================================== -->
+    <div class="personal-floating-widget" aria-label="Social Connections">
+        <a href="https://www.linkedin.com/in/humamkhan8/" target="_blank" rel="noopener noreferrer" class="social-fab linkedin" title="Connect on LinkedIn" aria-label="LinkedIn Profile">
+            <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="https://humamkhan.vercel.app/" target="_blank" rel="noopener noreferrer" class="social-fab portfolio" title="View Portfolio" aria-label="Personal Portfolio">
+            <i class="fa-solid fa-briefcase"></i>
+        </a>
+    </div>
+
+    <!-- ==========================================================================
+       NOTIFICATION TOAST SYSTEM
+       ========================================================================== -->
+    <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+    <script src="index.js" defer></script>
+</body>
+</html>
