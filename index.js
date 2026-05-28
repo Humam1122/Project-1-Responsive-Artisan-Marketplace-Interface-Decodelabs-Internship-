@@ -66,7 +66,7 @@ const PRODUCTS_DATA = [
             regionKey: 'north'
         },
         tags: ['Pure Organic'],
-        availability: 'custom',
+        availability: 'in-stock',
         sustainability: ['organic'],
         description: 'A beautifully structured, hand-woven cotton canvas tote bag featuring strong reinforced handles and a spacious interior for all your daily essentials. Perfectly blends practical durability with subtle artistic style.'
     },
